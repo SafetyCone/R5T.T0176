@@ -4,7 +4,7 @@ using System;
 namespace R5T.T0176
 {
 	/// <summary>
-	/// IDistinctEnumerable<T> types library.
+	/// IDistinctEnumerable&lt;T&gt; types library.
 	/// </summary>
 	public static class Documentation
 	{
