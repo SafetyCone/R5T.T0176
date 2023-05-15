@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 
+using R5T.T0142;
+
 
 namespace R5T.T0176
 {
@@ -11,7 +13,9 @@ namespace R5T.T0176
     /// <remarks>
     /// Conceptually similar to <see cref="IReadOnlyCollection{T}"/>, but indicates the property of being distict instead of being read-only.
     /// </remarks>
-    public interface IDistinctArray<T> : IList<T>, ICollection<T>, IEnumerable<T>, IReadOnlyList<T>, IReadOnlyCollection<T>
+    [UtilityTypeMarker]
+    public interface IDistinctArray<T> : IList<T>, ICollection<T>, IDistinctEnumerable<T>, IReadOnlyList<T>, IReadOnlyCollection<T>
     {
+        T[] Array { get; }
     }
 }

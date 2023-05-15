@@ -13,5 +13,7 @@ namespace R5T.T0176.Internal
             : base(array)
         {
         }
+
+        T[] IDistinctArray<T>.Array => this;
     }
 }

@@ -14,7 +14,7 @@ namespace R5T.T0176
         /// Assumes the input <paramref name="array"/> is already distinct and simply wraps it in a distint array type.
         /// </summary>
         /// <param name="array">An array assumed to already be distinct.</param>
-        public DistinctArray<T> AsDistinctArray<T>(T[] array)
+        public IDistinctArray<T> AsDistinctArray<T>(T[] array)
         {
             var output = new DistinctArray<T>(array);
             return output;

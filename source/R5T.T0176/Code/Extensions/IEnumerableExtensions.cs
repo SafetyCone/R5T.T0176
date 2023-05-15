@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using R5T.T0176.Internal;
-
 
 namespace R5T.T0176.Extensions
 {
@@ -15,9 +13,24 @@ namespace R5T.T0176.Extensions
         }
 
         /// <inheritdoc cref="IEnumerableOperator.AsDistinctEnumerable{T}(IEnumerable{T})"/>
-        public static DistinctArray<T> ToDistinctArray<T>(this IEnumerable<T> enumerable)
+        public static IDistinctArray<T> ToDistinctArray<T>(this IEnumerable<T> enumerable)
         {
             return Instances.EnumerableOperator.ToDistinctArray(enumerable);
+        }
+
+        /// <inheritdoc cref="IEnumerableOperator.ToDistinctEnumerable{T}(IEnumerable{T})"/>
+        public static IDistinctEnumerable<T> ToDistinctEnumerable<T>(this IEnumerable<T> enumerable)
+        {
+            return Instances.EnumerableOperator.ToDistinctEnumerable(enumerable);
+        }
+
+        /// <inheritdoc cref="IEnumerableOperator.ToDistinctEnumerable{T}(IEnumerable{T}, IEqualityComparer{T})"/>
+        public static IDistinctEnumerable<T> ToDistinctEnumerable<T>(this IEnumerable<T> enumerable,
+            IEqualityComparer<T> equalityComparer)
+        {
+            return Instances.EnumerableOperator.ToDistinctEnumerable(
+                enumerable,
+                equalityComparer);
         }
     }
 }
